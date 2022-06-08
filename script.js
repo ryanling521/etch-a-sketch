@@ -9,17 +9,23 @@ function removeAllChildNodes(parent) {
     }
 }
 function populate(size) {
-    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    if (size < 100) {
 
-    for (let i = 1; i < size*size+1; i++) {
-        let square = document.createElement('div');
-        square.classList.add('divs');
-        square.style.backgroundColor = 'white';
-        // square.style.borderColor = 'black';
-        // square.textContent = `${i}`;
-        container.append(square);
+        container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+        for (let i = 1; i < size*size+1; i++) {
+            let square = document.createElement('div');
+            square.classList.add('divs');
+            square.style.backgroundColor = 'white';
+            // square.style.borderColor = 'black';
+            // square.textContent = `${i}`;
+            container.append(square);
+        }
+    } else {
+        alert('Please enter a number below 100!');
     }
+
 }
 
 // take input from button
@@ -38,7 +44,7 @@ btn.addEventListener('click',function() {
     // add hovering effect to all divs
     divs.forEach(function(div) {
       div.addEventListener('mouseenter', e => e.target.style.backgroundColor = 'purple');
-      div.addEventListener('mouseleave', e => e.target.style.backgroundColor = 'white');
+    //   div.addEventListener('mouseleave', e => e.target.style.backgroundColor = 'white');
     });
 });
 
