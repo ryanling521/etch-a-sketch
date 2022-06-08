@@ -16,8 +16,8 @@ function populate(size) {
         let square = document.createElement('div');
         square.classList.add('divs');
         square.style.backgroundColor = 'white';
-        square.style.borderColor = 'black';
-        square.textContent = `${i}`;
+        // square.style.borderColor = 'black';
+        // square.textContent = `${i}`;
         container.append(square);
     }
 }
